@@ -87,6 +87,14 @@ func (h Hostlist) Less(A, B int) bool {
 		// to the domain sorting section.
 	}
 
+	// Fully-qualified names come before other names
+	if strings.Contains(h[A].Domain, ".") && !strings.Contains(h[B].Domain, ".") {
+		return true
+	}
+	if strings.Contains(h[B].Domain, ".") && !strings.Contains(h[A].Domain, ".") {
+		return false
+	}
+
 	// Prep for sorting by domain name
 	aLength := len(h[A].Domain)
 	bLength := len(h[B].Domain)
