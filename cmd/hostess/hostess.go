@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
-	"github.com/cbednarski/hostess"
 	"github.com/codegangsta/cli"
+	"github.com/joelnb/hostess"
 )
 
 func getCommand() string {
